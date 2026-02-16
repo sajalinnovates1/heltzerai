@@ -313,7 +313,10 @@
                                 <input
                                     type="text"
                                     value={userInputs.zipCode}
-                                    onChange={(e) => setUserInputs({...userInputs, zipCode: e.target.value})}
+                                    onChange={(e) => {
+                                        const newValue = e.target.value;
+                                        setUserInputs(prev => ({...prev, zipCode: newValue}));
+                                    }}
                                     placeholder="60614"
                                     maxLength="5"
                                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
@@ -365,7 +368,10 @@
                                         <input
                                             type="number"
                                             value={userInputs.downPayment}
-                                            onChange={(e) => setUserInputs({...userInputs, downPayment: e.target.value})}
+                                            onChange={(e) => {
+                                                const value = e.target.value;
+                                                setUserInputs(prev => ({...prev, downPayment: value}));
+                                            }}
                                             placeholder="5000"
                                             min="0"
                                             className="w-full border border-gray-300 rounded-lg pl-8 pr-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
@@ -389,7 +395,7 @@
                                     <button
                                         onClick={() => {
                                             simulateAIThinking(() => {
-                                                setUserInputs({...userInputs, creditScore: 720});
+                                                setUserInputs(prev => ({...prev, creditScore: 720}));
                                             }, 1500);
                                         }}
                                         className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
@@ -431,14 +437,20 @@
                                                 type="text"
                                                 placeholder="Year (e.g., 2018)"
                                                 value={userInputs.tradeInYear}
-                                                onChange={(e) => setUserInputs({...userInputs, tradeInYear: e.target.value})}
+                                                onChange={(e) => {
+                                                    const value = e.target.value;
+                                                    setUserInputs(prev => ({...prev, tradeInYear: value}));
+                                                }}
                                                 className="border border-gray-300 rounded px-3 py-2 text-sm"
                                             />
                                             <input
                                                 type="text"
                                                 placeholder="Make (e.g., Honda)"
                                                 value={userInputs.tradeInMake}
-                                                onChange={(e) => setUserInputs({...userInputs, tradeInMake: e.target.value})}
+                                                onChange={(e) => {
+                                                    const value = e.target.value;
+                                                    setUserInputs(prev => ({...prev, tradeInMake: value}));
+                                                }}
                                                 className="border border-gray-300 rounded px-3 py-2 text-sm"
                                             />
                                         </div>
@@ -446,14 +458,20 @@
                                             type="text"
                                             placeholder="Model (e.g., Accord)"
                                             value={userInputs.tradeInModel}
-                                            onChange={(e) => setUserInputs({...userInputs, tradeInModel: e.target.value})}
+                                            onChange={(e) => {
+                                                const value = e.target.value;
+                                                setUserInputs(prev => ({...prev, tradeInModel: value}));
+                                            }}
                                             className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
                                         />
                                         <input
                                             type="text"
                                             placeholder="Mileage (e.g., 45000)"
                                             value={userInputs.tradeInMileage}
-                                            onChange={(e) => setUserInputs({...userInputs, tradeInMileage: e.target.value})}
+                                            onChange={(e) => {
+                                                const value = e.target.value;
+                                                setUserInputs(prev => ({...prev, tradeInMileage: value}));
+                                            }}
                                             className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
                                         />
                                         
